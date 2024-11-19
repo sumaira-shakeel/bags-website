@@ -1,42 +1,286 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f49b;
+    color: #333;
 }
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: #333;
+}
+h1 , h2 ,  h3{
+    font-weight: bold;
+
+}
+/* header styles */
+.header{
+    background-color: teal;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+
+}
+.header .logo{
+    font-size: 24px;
+    color: white;
+
+}
+.header nav{
+    display: flex;
+    gap: 40px;
+
+}
+.header nav a{
+    color: white;
+    font-weight: bold;
+    
+}
+.header nav a :hover{
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.69);
+}
+/* footer style */
+footer{
+    background-color: teal;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+
+}
+footer p{
+    margin: 0;
+}
+/* home page styles */
+.hero{
+    background-color: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    padding-left: 60px;
+    color: teal;
+    font-family: cursive;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* home page styles */
+.hero h1{
+    font-size: 58px;
+    text-shadow: 2px 2px 5px fgba(0,0,0,0.5);
+}
+.hero p{
+    font-size: 30px;
+    margin-top: 10px;
+
+}
+.hero button{
+    margin-top: 20px;
+    padding: 20px 30px;
+    background-color: teal;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.hero button:hover{
+    background-color: rgb(73, 224, 224);
+}
+/* about page styles */
+.about{
+    background-size: contain;
+ 
+    
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+
+}
+.about-content{
+    max-width: 500px;
+    text-align: left;
+    background: rgba(0, 0,  0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+}
+.about-content p{
+    padding-top: 20px;
+
+}
+
+/* bages stylesw */
+.bages{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+    gap: 20px;
+    margin: 50px;
+}
+.img-size{
+    width: 300px;
+    height: 400px;
+}
+.bag-card{
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.bag-card img{
+    width: 100%;
+    border-radius: 10px;
+}
+.bag-card h3{
+    margin-top: 10px;
+
+}
+.bag-card p{
+    color: #555;
+    font-size: 14px;
+
+}
+.bag-card .price{
+    font-size: 20px;
+    font-weight: bold;
+    color: teal;
+}
+.btn{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.bag-card button:hover{
+    background-color: rgba(71, 180, 180, 0.745);
+}
+.bag-card img{
+    border-radius: 10px;
+    transition: transform 0.3 ease;
+}
+.bag-card:hover img{
+    transform: scale(1.1);
+
+}
+/* contact style */
+.contact-form{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.contact-form input ,
+.contact-form textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-form button{
+    padding: 10px 20px;
+    background-color: teal;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    color: white;
+}
+.contact-form button:hover{
+    background-color: seagreen;
+}
+/* fade in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 1s  ease-out forwards;
+
+}
+/* responsive style */
+@media (max-width:768px){
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header .logo{
+        margin-bottom: 10px;
+
+    }
+    .header nav{
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+    }
+    .hero{
+        height: 70vh;
+        padding: 20px;
+text-align: center;
+    }
+    .hero h1{
+        font-size: 36px;
+    }
+    .hero p{
+        font-size: 18px;
+       
+    }
+    .hero button{
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+    .bages{
+        grid-template-columns: 1fr;
+        margin: 20px;
+
+    }
+    .about{
+        padding: 40px 20px;
+        height: auto;
+
+    }
+    .about-content{
+        width: 100%;
+        padding: 20px;
+
+    }
+    .contact-form{
+        margin: 20px;
+        padding: 20px;
+    }
 }
